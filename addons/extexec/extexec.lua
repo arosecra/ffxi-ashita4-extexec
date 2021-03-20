@@ -6,9 +6,7 @@ addon.desc      = 'Performs text replacement before executing a command';
 addon.link      = 'TBD';     
 
 local common = require('common');
-local jobs = require('arosecra/jobs');
-local libs2imgui = require('arosecra/imgui');
-local libs2config = require('arosecra/config');
+local jobs = require('org_github_arosecra/jobs');
 
 ashita.events.register('command', 'command_callback1', function (e)
 	if (not e.command:startswith('/extexec')) then
