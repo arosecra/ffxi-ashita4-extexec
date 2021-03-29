@@ -1,9 +1,9 @@
 
-addon.name      = 'extexec';                   
-addon.author    = 'arosecra';                    
-addon.version   = '1.0';                       
-addon.desc      = 'Performs text replacement before executing a command';   
-addon.link      = 'TBD';     
+addon.name      = 'extexec';
+addon.author    = 'arosecra';
+addon.version   = '1.0';
+addon.desc      = 'Performs text replacement before executing a command';
+addon.link      = 'TBD';
 
 local common = require('common');
 local jobs = require('org_github_arosecra/jobs');
@@ -21,7 +21,7 @@ ashita.events.register('command', 'command_callback1', function (e)
 	local mainjob = jobs[party:GetMemberMainJob(0)];
 	
 	local values = {
-		['NAME'] = name,
+		['NAME'] = party:GetMemberName(0),
 		['MAINJOB'] = mainjob
 	};
 	
