@@ -6,7 +6,6 @@ addon.desc      = 'Performs text replacement before executing a command';
 addon.link      = 'TBD';
 
 local common = require('common');
-local jobs = require('org_github_arosecra/jobs');
 
 ashita.events.register('command', 'command_callback1', function (e)
 	if (not e.command:startswith('/extexec')) then
@@ -18,7 +17,7 @@ ashita.events.register('command', 'command_callback1', function (e)
 
     local memoryManager = AshitaCore:GetMemoryManager();
 	local party = memoryManager:GetParty();
-	local mainjob = jobs[party:GetMemberMainJob(0)];
+	local mainjob = AshitaCore:GetResourceManager():GetString("jobs.names_abbr", party:GetMemberMainJob(0));
 	
 	local values = {
 		['NAME'] = party:GetMemberName(0),
